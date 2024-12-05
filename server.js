@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // Endpoint to receive data
 app.post("/content", (req, res) => {
-  console.log(req);
+  console.log(req.body);
   const receivedData = req.body;
 
   // Define the path to the file
@@ -25,12 +25,10 @@ app.post("/content", (req, res) => {
     }
 
     // Send a response back
-    res
-      .status(200)
-      .json({
-        message: "Data received and saved successfully",
-        data: receivedData,
-      });
+    res.status(200).json({
+      message: "Data received and saved successfully",
+      data: receivedData,
+    });
   });
 });
 

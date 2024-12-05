@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/content", {
+fetch("https://nonstop-humane-memory.glitch.me/content", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
