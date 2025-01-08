@@ -12,10 +12,12 @@ app.use(bodyParser.json());
 // Endpoint to receive data
 app.post("/content", (req, res) => {
   console.log(req.body);
+  const i = 0;
   const receivedData = req.body;
 
   // Define the path to the file
-  const filePath = path.join(__dirname, "data.json");
+  const filePath = path.join(__dirname, `data_${i}.json`);
+  i += 1;
 
   // Write the received data to a file
   fs.writeFile(filePath, JSON.stringify(receivedData, null, 2), (err) => {
